@@ -1,0 +1,105 @@
+##
+## User local/specific files
+##
+project-local.properties
+docker-compose.override.yml
+*_private.sh
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+
+##
+## Output files and folders
+##
+
+# Log files
+*.log
+
+# Binary output files 
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Output folders
+.web_bundle_build
+bin
+build
+build_gradle
+bundles
+coverage
+dist
+out
+portal-deploy
+target
+test-coverage
+test-results
+tmp
+
+
+##
+## Build tools temp / local files / folders
+##
+
+# Maven
+dependency-reduced-pom.xml
+pom.xml.versionsBackup
+
+# Gradle
+.gradle
+gradle-*.properties
+
+# Ant & Ivy
+.ivy
+
+# Node
+node_modules
+
+# NPM
+npm-debug.log*
+
+# Yarn
+yarn-debug.log*
+yarn-error.log*
+
+# SASS
+.sass-cache
+
+# Liferay Theme Build
+liferay-theme.json
+
+
+##
+## IDE folders and files
+##
+
+# IntelliJ Idea / PhpStorm / WebStorm / ..
+*.iml
+.idea
+
+# Eclipse
+.project
+.classpath
+.settings
+
+
+##
+## OS specific deadwood
+##
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+._*
+.~*
+*~
+.*.sw*
+~*
+$~*
