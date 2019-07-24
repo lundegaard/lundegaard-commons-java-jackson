@@ -6,62 +6,43 @@
  */
 package eu.lundegaard.commons.jackson;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.TimeZone;
+import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
-import eu.lundegaard.commons.util.DateUtil;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+
+import java.util.TimeZone;
 
 
 /**
  * Class provides common creation and configuration of objectMapper.
  *
  * @author Jiri Kadlec (jiri.kadlec@lundegaard.eu)
+ * @author Ales Rybak (ales.rybak@lundegaard.eu)
  */
 public class ObjectMapperFactory {
 
     public static ObjectMapper createObjectMapper() {
-        return withTimeZone(TimeZone.getDefault());
-    }
-
-    public static ObjectMapper withTimeZone(TimeZone zone) {
         ObjectMapper mapper = new ObjectMapper();
-        mapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true)
-                .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
-                .registerModule(dateSupportModule())
-                .setTimeZone(zone);
+
+        mapper.registerModule(new JavaTimeModule());
+        mapper.registerModule(new Jdk8Module());
+
+        mapper.setTimeZone(TimeZone.getDefault());
+
+        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+        // mapper.disable(SerializationFeature.WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS);
+         mapper.disable(DeserializationFeature.READ_DATE_TIMESTAMPS_AS_NANOSECONDS);
+        mapper.disable(DeserializationFeature.ADJUST_DATES_TO_CONTEXT_TIME_ZONE);
+
+        mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+        mapper.enable(JsonParser.Feature.ALLOW_COMMENTS);
+        mapper.enable(MapperFeature.ACCEPT_CASE_INSENSITIVE_ENUMS);
 
         return mapper;
     }
-
-    private static SimpleModule dateSupportModule() {
-        Jackson8Module module = new Jackson8Module();
-        module.addStringSerializer(LocalDateTime.class, ObjectMapperFactory::getLocalDateTimeSerializerFunction);
-        module.addStringDeserializer(LocalDateTime.class, ObjectMapperFactory::getLocalDateTimeDeserializerFunction);
-        module.addStringSerializer(LocalDate.class, ObjectMapperFactory::getLocalDateSerializerFunction);
-        module.addStringDeserializer(LocalDate.class, ObjectMapperFactory::getLocalDateDeserializerFunction);
-
-        return module;
-    }
-
-    private static String getLocalDateTimeSerializerFunction(LocalDateTime val) {
-        return String.valueOf(DateUtil.toDate(val).getTime());
-    }
-
-    private static LocalDateTime getLocalDateTimeDeserializerFunction(String val) {
-        return DateUtil.toLocalDateTime(Long.valueOf(val));
-    }
-
-    private static String getLocalDateSerializerFunction(LocalDate val) {
-        return String.valueOf(DateUtil.toDate(val).getTime());
-    }
-
-    private static LocalDate getLocalDateDeserializerFunction(String val) {
-        return DateUtil.toLocalDate(Long.valueOf(val));
-    }
-
-
 
 }
