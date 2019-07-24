@@ -91,4 +91,13 @@ public class SerializableTestWithLocalDate {
         result = 31 * result + (localDateTime != null ? localDateTime.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "SerializableTestWithLocalDate{" +
+            "date=" + date +
+            ", localDate=" + localDate +
+            ", localDateTime=" + localDateTime +
+            '}';
+    }
 }
