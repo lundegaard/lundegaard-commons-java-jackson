@@ -23,9 +23,8 @@ import static eu.lundegaard.commons.util.ValidateUtil.validateNotNull;
  */
 public class SerializingUtil {
 
-    private static final Logger LOG = LoggerFactory.getLogger(SerializingUtil.class);
+    private static final ObjectMapper MAPPER = ObjectMapperFactory.createObjectMapper();
 
-    private static final String ERR_MSG = "Can't deserialize. String is null";
 
     private SerializingUtil() {
         // private constructor for util class
@@ -35,12 +34,10 @@ public class SerializingUtil {
     public static String serializeToJson(Object entity) {
         try {
 
-            ObjectMapper mapper = ObjectMapperFactory.createObjectMapper();
-            return mapper.writeValueAsString(entity);
+            return MAPPER.writeValueAsString(entity);
 
         } catch (JsonProcessingException e) {
-            LOG.error("Cannot convert object to JSON.", e);
-            throw new ApplicationException(e.getMessage());
+            throw new SerializationException("Cannot convert object to JSON.", e);
         }
     }
 
@@ -49,12 +46,10 @@ public class SerializingUtil {
 
         try {
 
-            ObjectMapper mapper = ObjectMapperFactory.createObjectMapper();
-            return mapper.readValue(json, objectClass);
+            return MAPPER.readValue(json, objectClass);
 
         } catch (IOException e) {
-            LOG.error("Cannot convert string json into class: {}", objectClass.getName(), e);
-            throw new ApplicationException(e.getMessage());
+            throw new SerializationException("Cannot convert JSON string into class: " + objectClass.getName(), e);
         }
     }
 
