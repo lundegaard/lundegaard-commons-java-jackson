@@ -27,7 +27,7 @@ import static eu.lundegaard.commons.util.ValidateUtil.validateNotNull;
  * @author Jakub Kohout (jakub.kohout@lundegaard.eu)
  * @author Ales Rybak (ales.rybak@lundegaard.eu)
  */
-public class SerializingUtil {
+public final class SerializingUtil {
 
     private static final ObjectMapper MAPPER = ObjectMapperFactory.createObjectMapper();
 

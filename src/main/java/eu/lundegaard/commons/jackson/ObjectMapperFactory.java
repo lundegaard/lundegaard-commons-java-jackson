@@ -30,7 +30,11 @@ import java.util.TimeZone;
  * @author Jiri Kadlec (jiri.kadlec@lundegaard.eu)
  * @author Ales Rybak (ales.rybak@lundegaard.eu)
  */
-public class ObjectMapperFactory {
+public final class ObjectMapperFactory {
+
+    private ObjectMapperFactory() {
+        // private constructor for util class
+    }
 
     public static ObjectMapper createObjectMapper() {
         ObjectMapper mapper = new ObjectMapper();
