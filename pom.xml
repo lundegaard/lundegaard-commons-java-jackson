@@ -15,6 +15,7 @@
     <description>
         Library for simple startup with object de/serialization to/from JSON using Jackson.
     </description>
+    <url>https://github.com/lundegaard/lundegaard-commons-java-jackson</url>
 
     <properties>
         <jackson.version>2.9.9</jackson.version>
@@ -85,4 +86,62 @@
             </plugin>
         </plugins>
     </build>
+
+    <organization>
+        <name>Lundegaard a.s.</name>
+        <url>https://www.lundegaard.eu</url>
+    </organization>
+
+    <issueManagement>
+        <system>Jira</system>
+        <url>https://jira.lnd.bz</url>
+    </issueManagement>
+
+    <ciManagement>
+        <system>Jenkins</system>
+        <url>https://jenkins.lnd.bz</url>
+    </ciManagement>
+
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public License 3.0</name>
+            <url>https://www.gnu.org/licenses/lgpl-3.0.txt</url>
+        </license>
+    </licenses>
+
+    <inceptionYear>2016</inceptionYear>
+
+    <developers>
+        <developer>
+            <name>Aleš Rybák</name>
+            <email>ales.rybak@lundegaard.eu</email>
+            <organization>Lundegaard a.s.</organization>
+            <organizationUrl>https://www.lundegaard.eu</organizationUrl>
+        </developer>
+        <developer>
+            <name>Jiří Kadlec</name>
+            <email>jiri.kadlec@lundegaard.eu</email>
+            <organization>Lundegaard a.s.</organization>
+            <organizationUrl>https://www.lundegaard.eu</organizationUrl>
+        </developer>
+        <developer>
+            <name>Jakub Kohout</name>
+            <email>jakub.kohout@lundegaard.eu</email>
+            <organization>Lundegaard a.s.</organization>
+            <organizationUrl>https://www.lundegaard.eu</organizationUrl>
+        </developer>
+        <developer>
+            <name>Roman Šrom</name>
+            <email>roman.srom@lundegaard.eu</email>
+            <organization>Lundegaard a.s.</organization>
+            <organizationUrl>https://www.lundegaard.eu</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/lundegaard/lundegaard-commons-java-jackson.git</connection>
+        <developerConnection>scm:git:ssh://github.com:lundegaard/lundegaard-commons-java-jackson.git</developerConnection>
+        <url>https://github.com/lundegaard/lundegaard-commons-java-jackson/tree/master</url>
+    </scm>
+
 </project>
