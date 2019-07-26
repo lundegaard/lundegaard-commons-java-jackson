@@ -41,8 +41,7 @@ public class ObjectMapperFactory {
         mapper.setTimeZone(TimeZone.getDefault());
 
         mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-        // mapper.disable(SerializationFeature.WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS);
-         mapper.disable(DeserializationFeature.READ_DATE_TIMESTAMPS_AS_NANOSECONDS);
+        mapper.disable(DeserializationFeature.READ_DATE_TIMESTAMPS_AS_NANOSECONDS);
         mapper.disable(DeserializationFeature.ADJUST_DATES_TO_CONTEXT_TIME_ZONE);
 
         mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);

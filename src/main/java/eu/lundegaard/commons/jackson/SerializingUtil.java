@@ -14,12 +14,10 @@
  */
 package eu.lundegaard.commons.jackson;
 
-import java.io.IOException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import eu.lundegaard.commons.exception.ApplicationException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.io.IOException;
 import static eu.lundegaard.commons.util.ValidateUtil.validateNotNull;
 
 /**

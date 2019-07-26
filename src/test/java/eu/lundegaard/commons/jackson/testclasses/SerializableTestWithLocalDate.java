@@ -103,9 +103,9 @@ public class SerializableTestWithLocalDate {
     @Override
     public String toString() {
         return "SerializableTestWithLocalDate{" +
-            "date=" + date +
-            ", localDate=" + localDate +
-            ", localDateTime=" + localDateTime +
-            '}';
+                "date=" + date +
+                ", localDate=" + localDate +
+                ", localDateTime=" + localDateTime +
+                '}';
     }
 }
