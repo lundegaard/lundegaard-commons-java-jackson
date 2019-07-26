@@ -12,6 +12,9 @@
     <packaging>jar</packaging>
 
     <name>Lundegaard Commons :: Jackson Commons Library</name>
+    <description>
+        Library for simple startup with object de/serialization to/from JSON using Jackson.
+    </description>
 
     <properties>
         <jackson.version>2.9.9</jackson.version>
