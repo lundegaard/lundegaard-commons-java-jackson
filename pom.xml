@@ -113,24 +113,28 @@
 
     <developers>
         <developer>
+            <id>ales.rybak</id>
             <name>Aleš Rybák</name>
             <email>ales.rybak@lundegaard.eu</email>
             <organization>Lundegaard a.s.</organization>
             <organizationUrl>https://www.lundegaard.eu</organizationUrl>
         </developer>
         <developer>
+            <id>jiri.kadlec</id>
             <name>Jiří Kadlec</name>
             <email>jiri.kadlec@lundegaard.eu</email>
             <organization>Lundegaard a.s.</organization>
             <organizationUrl>https://www.lundegaard.eu</organizationUrl>
         </developer>
         <developer>
+            <id>jakub.kohout</id>
             <name>Jakub Kohout</name>
             <email>jakub.kohout@lundegaard.eu</email>
             <organization>Lundegaard a.s.</organization>
             <organizationUrl>https://www.lundegaard.eu</organizationUrl>
         </developer>
         <developer>
+            <id>roman.srom</id>
             <name>Roman Šrom</name>
             <email>roman.srom@lundegaard.eu</email>
             <organization>Lundegaard a.s.</organization>
