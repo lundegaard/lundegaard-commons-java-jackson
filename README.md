@@ -1,3 +1,5 @@
+[![Artifact](https://maven-badges.herokuapp.com/maven-central/eu.lundegaard.commons.java/jackson/badge.svg?color=blue)](https://search.maven.org/search?q=g:eu.lundegaard.commons.java%20AND%20a:jackson) [![Javadocs](https://www.javadoc.io/badge/eu.lundegaard.commons.java/jackson.svg?color=blue)](https://www.javadoc.io/doc/eu.lundegaard.commons.java/jackson)
+
 # Lundegaard Java Commons - Jackson
 
 This library is used for simple startup with object de/serialization to/from JSON using Jackson. 
@@ -10,7 +12,7 @@ Just add it as dependency, e.g. into Maven (use the latest version)
 <dependency>
     <groupId>eu.lundegaard.commons.java</groupId>
     <artifactId>jackson</artifactId>
-    <version>3.0.0</version>
+    <version>${lundegaard.commons.jackson.version}</version>
 </dependency>
 ``` 
 
