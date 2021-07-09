@@ -18,7 +18,7 @@
     <url>https://github.com/lundegaard/lundegaard-commons-java-jackson</url>
 
     <properties>
-        <jackson.version>2.10.2</jackson.version>
+        <jackson.version>2.12.4</jackson.version>
     </properties>
 
     <dependencies>
@@ -57,7 +57,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13</version>
+            <version>4.13.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
